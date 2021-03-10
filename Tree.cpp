@@ -65,12 +65,14 @@ int main() {
         nodes.push_back(std::make_shared<Node>(std::to_string(i)));
     }
 
+    // Tree 1.
     nodes[0]->addChild(nodes[1]);
     nodes[0]->addChild(nodes[3]);
     nodes[1]->addChild(nodes[2]);
     nodes[3]->addChild(nodes[4]);
     nodes[4]->addChild(nodes[5]);
 
+    // Tree 2.
     nodes[6]->addChild(nodes[4]);
     nodes[6]->addChild(nodes[7]);
     nodes[6]->addChild(nodes[9]);
