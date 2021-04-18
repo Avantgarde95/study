@@ -19,4 +19,6 @@ ADD_TARGET(WeakPointer)
 
 if (MSVC)
     ADD_TARGET(Registry)
+    add_executable(IPCClient IPC/IPCClient.cpp)
+    add_executable(IPCServer WIN32 IPC/IPCServer.cpp)
 endif ()
