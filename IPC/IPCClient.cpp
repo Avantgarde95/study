@@ -4,31 +4,45 @@
 #include "IPCCommon.hpp"
 
 int main() {
+	setlocale(LC_ALL, "");
+
 	Data data = Data(
 		Gender::Woman,
 		Vector(2, 3),
-		"Cindy"
+		"Cindy",
+		L"½Åµð"
 	);
 
-	std::cout << "Data: " << data.toString() << "\n";
+	std::wcout << "Data: " << data.toString() << "\n";
 
-	HWND hwnd = FindWindow(nullptr, "IPCServer");
+	HWND hwnd;
 
-	if (hwnd == 0) {
-		std::cout << "Server is not running!\n";
-		return 0;
+	for (;;) {
+		hwnd = FindWindow(nullptr, "IPCServer");
+
+		if (hwnd == 0) {
+			std::cout << "Server is not running! Press Enter to retry the connection.";
+			std::cin.get();
+		}
+		else {
+			break;
+		}
 	}
 
-	std::cout << "Press Enter to send the data.";
-	std::cin.get();
+	std::cout << "Connected to the server!\n";
 
-	COPYDATASTRUCT copyData;
-	copyData.cbData = sizeof(data);
-	copyData.dwData = 1;
-	copyData.lpData = &data;
+	for (;;) {
+		std::cout << "Press Enter to send the data.";
+		std::cin.get();
 
-	SendMessage(hwnd, WM_COPYDATA, 0, (LPARAM)(&copyData));
-	std::cout << "Sent the data\n";
+		COPYDATASTRUCT copyData;
+		copyData.cbData = sizeof(data);
+		copyData.dwData = 1;
+		copyData.lpData = &data;
+
+		SendMessage(hwnd, WM_COPYDATA, 0, (LPARAM)(&copyData));
+		std::cout << "Sent the data\n";
+	}
 
 	return 0;
 }

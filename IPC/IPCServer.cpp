@@ -12,10 +12,10 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) 
 
 		if (copyDataAddr->dwData == 1) {
 			Data* dataAddr = (Data*)(copyDataAddr->lpData);
-			std::stringstream ss;
-			ss << "Received the data: " + dataAddr->toString();
-			std::string result = ss.str();
-			MessageBox(0, result.data(), "Result", MB_OK);
+			std::wstringstream wss;
+			wss << L"Received the data: " + dataAddr->toString();
+			std::wstring result = wss.str();
+			MessageBoxW(0, result.data(), L"Result", MB_OK);
 		}
 
 		return 0;
@@ -59,7 +59,7 @@ int WINAPI WinMain(
 		"IPCServer",
 		"IPCServer",
 		WS_OVERLAPPEDWINDOW,
-		CW_USEDEFAULT, CW_USEDEFAULT, CW_USEDEFAULT, CW_USEDEFAULT,
+		CW_USEDEFAULT, CW_USEDEFAULT, 300, 200,
 		nullptr,
 		nullptr,
 		hInstance,
