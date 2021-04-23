@@ -2,6 +2,18 @@
 
 Simple codes for my C++ study
 
+### How to build
+
+- Linux, WSL
+  ```bash
+  mkdir build
+  cd build
+  cmake ..
+  make
+  ```
+- Windows
+  - You can use Visual Studio to open the folder as a CMake project.
+
 ### Examples
 
 - SmartPointers: Usage & reference counting of the smart pointers (`std::shared_ptr`, `std::unique_ptr`)
@@ -12,3 +24,4 @@ Simple codes for my C++ study
 - IPC: Sending the simple data using Windows IPC & copydata
   - Run IPCServer first
   - While IPCServer is running, run IPCClient and press Enter.
+- Container: Some experiments using the containers (ex. Storing the smart pointers in `std::map`)

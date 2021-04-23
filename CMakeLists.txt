@@ -16,6 +16,7 @@ ADD_TARGET(VirtualFunction)
 ADD_TARGET(VirtualDestructor)
 ADD_TARGET(Tree)
 ADD_TARGET(WeakPointer)
+ADD_TARGET(Container)
 
 if (MSVC)
     ADD_TARGET(Registry)
