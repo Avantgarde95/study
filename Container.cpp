@@ -3,12 +3,20 @@
 #include <map>
 
 int main() {
-	std::map<std::string, std::shared_ptr<std::string>> nicknameMap;
+	auto cindyNickname = std::make_shared<std::string>("Girl");
 
-	nicknameMap["Cindy"] = std::make_shared<std::string>("Girl");
-	nicknameMap["Paul"] = std::make_shared<std::string>("Boy");
+	{
+		std::map<std::string, std::shared_ptr<std::string>> nicknameMap;
 
-	std::cout << *nicknameMap["Cindy"] << "\n";
+		nicknameMap["Cindy"] = cindyNickname;
+		nicknameMap["Paul"] = std::make_shared<std::string>("Boy");
+
+		auto& value1 = nicknameMap["Cindy"];
+		std::cout << *value1 << "(Count: " << value1.use_count() << ")\n";
+	}
+
+	auto& value2 = cindyNickname;
+	std::cout << *value2 << "(Count: " << value2.use_count() << ")\n";
 
 	return 0;
 }
