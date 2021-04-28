@@ -6,12 +6,12 @@
 int main() {
 	setlocale(LC_ALL, "");
 
-	Data data = Data(
+	Data data = {
 		Gender::Woman,
-		Vector(2, 3),
+		{ 2, 3 },
 		"Cindy",
 		L"½Åµð"
-	);
+	};
 
 	std::wcout << "Data: " << data.toString() << "\n";
 
