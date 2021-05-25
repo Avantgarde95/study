@@ -3,9 +3,8 @@ project(cpp-practice)
 
 set(CMAKE_CXX_STANDARD 14)
 
-if (MSVC)
-    add_definitions(-D_CRT_SECURE_NO_WARNINGS)
-endif ()
+add_compile_options("$<$<C_COMPILER_ID:MSVC>:/utf-8>")
+add_compile_options("$<$<CXX_COMPILER_ID:MSVC>:/utf-8>")
 
 function(ADD_TARGET name)
     add_executable(${name} ${name}.cpp)

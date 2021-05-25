@@ -10,7 +10,7 @@ int main() {
 		Gender::Woman,
 		{ 2, 3 },
 		"Cindy",
-		L"½Åµð"
+		L"ì‹ ë””"
 	};
 
 	std::wcout << "Data: " << data.toString() << "\n";

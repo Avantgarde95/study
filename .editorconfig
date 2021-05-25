@@ -1,0 +1,6 @@
+[*.{c++,cc,cpp,cxx,h,h++,hh,hpp,hxx,inl,ipp,tlh,tli}]
+
+cpp_indent_namespace_contents = false
+charset = utf-8
+indent_style = space
+indent_size = 4
