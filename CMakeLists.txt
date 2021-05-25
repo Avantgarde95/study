@@ -16,6 +16,7 @@ ADD_TARGET(VirtualDestructor)
 ADD_TARGET(Tree)
 ADD_TARGET(WeakPointer)
 ADD_TARGET(Container)
+ADD_TARGET(Template)
 
 if (MSVC)
     ADD_TARGET(Registry)
