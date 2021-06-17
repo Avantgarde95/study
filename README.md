@@ -25,3 +25,6 @@ Simple codes for my C++ study
   - Run IPCServer first
   - While IPCServer is running, run IPCClient and press Enter.
 - Container: Some experiments using the containers (ex. Storing the smart pointers in `std::map`)
+- Template: Fun applications of template.
+  - Compile-time computation
+  - CRTP (Curiously Recurring Template Pattern)
