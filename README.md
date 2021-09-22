@@ -1,0 +1,3 @@
+# study
+
+Implementation of various kinds of algorithms &amp; structures in C++, JS, ...
